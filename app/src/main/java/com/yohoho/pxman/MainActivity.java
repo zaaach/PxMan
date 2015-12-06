@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mConvertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            	if (currentEditText == null) return;
                 String input = currentEditText.getText().toString();
                 Log.e("onClick", "当前输入数值： " + input);
                 if (TextUtils.isEmpty(input)){
