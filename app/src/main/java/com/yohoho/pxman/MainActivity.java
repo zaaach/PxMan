@@ -72,9 +72,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private double getMdpiValue(double inputValue, int position){
+    private double getMdpiValue(double inputValue, int dpi){
         double result = inputValue;
-        switch (position){
+        switch (dpi){
             case Dpi.LDPI:
                 result = inputValue * 4/3;
                 break;
