@@ -1,7 +1,7 @@
 package com.yohoho.pxman;
 
 /**
- * author yohoho on 2015/12/6.
+ * author Zaaach on 2015/12/6.
  */
 public class Dpi {
     public static final int LDPI       = 1;

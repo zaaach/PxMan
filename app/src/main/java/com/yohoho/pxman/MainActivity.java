@@ -15,7 +15,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * author yohoho on 2015/12/6.
+ * author Zaaach on 2015/12/6.
  * 灵感来自：http://androidpixels.net/
  */
 public class MainActivity extends AppCompatActivity {

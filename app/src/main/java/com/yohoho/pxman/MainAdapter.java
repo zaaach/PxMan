@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 /**
- * author yohoho on 2015/12/6.
+ * author Zaaach on 2015/12/6.
  */
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private static final int ITEM_TYPE_TITLE = 123;
