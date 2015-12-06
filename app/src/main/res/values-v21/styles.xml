@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:statusBarColor">@color/colorAccent</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+</resources>
