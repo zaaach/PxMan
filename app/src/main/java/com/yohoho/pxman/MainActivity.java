@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private MainAdapter mAdapter;
     private EditText currentEditText;
 
-    private int currentDpi = Dpi.MDPI;
+    private int currentDpiType = DpiType.LDPI;
     private boolean isDpValue;
 
     @Override
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "请输入数值", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                double mdpiValue = isDpValue ? Double.valueOf(input) : getMdpiValue(Double.valueOf(input), currentDpi);
+                double mdpiValue = isDpValue ? Double.valueOf(input) : getMdpiValue(Double.valueOf(input), currentDpiType);
                 mAdapter.changeDataByMdpiValue(mdpiValue);
             }
         });
@@ -64,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new MainAdapter(this);
         mAdapter.setOnFocusedListener(new MainAdapter.OnFocusedListener() {
             @Override
-            public void onFocused(EditText editText, boolean hasFocus, int dpi, boolean isDp) {
+            public void onFocused(EditText editText, boolean hasFocus, int dpiType, boolean isDp) {
                 currentEditText = editText;
-                currentDpi = dpi;
+                currentDpiType = dpiType;
                 isDpValue = isDp;
                 Log.e("onFocused", hasFocus + "");
             }
@@ -76,21 +76,21 @@ public class MainActivity extends AppCompatActivity {
     private double getMdpiValue(double inputValue, int dpi){
         double result = inputValue;
         switch (dpi){
-            case Dpi.LDPI:
+            case DpiType.LDPI:
                 result = inputValue * 4/3;
                 break;
-            case Dpi.MDPI:
+            case DpiType.MDPI:
                 break;
-            case Dpi.HDPI:
+            case DpiType.HDPI:
                 result = inputValue * 2/3;
                 break;
-            case Dpi.XHDPI:
+            case DpiType.XHDPI:
                 result = inputValue / 2;
                 break;
-            case Dpi.XXHDPI:
+            case DpiType.XXHDPI:
                 result = inputValue / 3;
                 break;
-            case Dpi.XXXHDPI:
+            case DpiType.XXXHDPI:
                 result = inputValue / 4;
                 break;
         }

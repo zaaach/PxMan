@@ -3,7 +3,7 @@ package com.yohoho.pxman;
 /**
  * author Zaaach on 2015/12/6.
  */
-public class Dpi {
+public class DpiType {
     public static final int LDPI       = 1;
     public static final int MDPI       = 2;
     public static final int HDPI       = 3;

@@ -2,8 +2,6 @@ package com.yohoho.pxman;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +45,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         if (position > 0){
             holder.dpiName.setText(DPI_NAMES[position - 1]);
             holder.pxValue.setText(double2String(mdpiValue, position));
-            holder.dpValue.setText(double2String(mdpiValue, Dpi.MDPI));
+            holder.dpValue.setText(double2String(mdpiValue, DpiType.MDPI));
 
             holder.pxValue.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
@@ -94,21 +92,21 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private String double2String(double d, int position){
         String result = String.valueOf(d);
         switch (position){
-            case Dpi.LDPI:
+            case DpiType.LDPI:
                 result = String.valueOf(d * 3/4);
                 break;
-            case Dpi.MDPI:
+            case DpiType.MDPI:
                 break;
-            case Dpi.HDPI:
+            case DpiType.HDPI:
                 result = String.valueOf(d * 3/2);
                 break;
-            case Dpi.XHDPI:
+            case DpiType.XHDPI:
                 result = String.valueOf(d * 2);
                 break;
-            case Dpi.XXHDPI:
+            case DpiType.XXHDPI:
                 result = String.valueOf(d * 3);
                 break;
-            case Dpi.XXXHDPI:
+            case DpiType.XXXHDPI:
                 result = String.valueOf(d * 4);
                 break;
         }
@@ -120,6 +118,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
     public interface OnFocusedListener{
-        void onFocused(EditText editText, boolean hasFocus, int dpi, boolean isDp);
+        void onFocused(EditText editText, boolean hasFocus, int dpiType, boolean isDp);
     }
 }
